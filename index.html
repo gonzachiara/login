@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <style>
+        table 
+{
+border: 2px solid #353a46;
+background-color: #3abaf1;
+}
+
+input[type=text], input[type=password]
+{
+    width: 100%;
+    padding: 8px 20px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+img
+{
+    width: 100px;
+    height: 100px;
+}
+
+label
+{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+input[type=submit]
+{
+    background-color: #1c94c8;
+    color: white;
+    padding: 8px 10px;
+    margin: 8px 0px;
+    border: solid;
+    width: 40%;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <head rel="stlesheet" href="estilos.css">
+        <h2>Iniciar Sesion</h2>
+</head>
+<body>
+    <form action="login_registrar.php" method="POST">
+        <input type="text" placeholder="&#10142; Usuario" name="usuario" required>
+        <input type="password" placeholder="&#128372; Contraseña" name="pass" required>
+        <input type="submit" value="Ingresar" name="btningresar">
+        <br>
+        <a href="registrar.html" style="float:right">Crear una cuenta</a>
+    </form>
+    
+</body>
+</html>
