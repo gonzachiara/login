@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear nuevo Usuario</title>
-    <head rel="stylesheet" href="estilos.css">
-        <h2>Registrar nuevo Usuario</h2>
+    <title>Login</title>
+    <!-- Enlaza tu archivo CSS externo -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Estilos en línea para el formulario--> 
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        table {
+            border: 2px solid #353a46;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px 20px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #300;
+            color: white;
+            padding: 8px 10px;
+            margin: 8px 0;
+            border: none;
+            width: 40%;
+        }
+    </style>
 </head>
 <body>
+    <h2>Crear nuevo Usuario</h2>
     <form action="login_registrar.php" method="POST">
-        <input type="text" placeholder="&#10142; Usuario" name="usuario" required>
-        <input type="password" placeholder="&#128372; Contraseña" name="pass" required>
-        <input type="submit" value="Registrar" name="btnregistrar">
+        <table>
+            <tr>
+                <td>
+                    <label for="usuario">Usuario</label>
+                </td>
+                <td>
+                    <input type="text" placeholder="&#10142; Usuario" name="usuario" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pass">Contraseña</label>
+                </td>
+                <td>
+                    <input type="password" placeholder="&#128372; Contraseña" name="pass" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="registrar" name="btnregistrar">
+                </td>
+            </tr>
+        </table>
         <br>
-        <a href="index.html" style="float:right">Volver</a>
+        <a href="index.html" style="float:right">volver</a>
     </form>
-    
 </body>
 </html>
+
