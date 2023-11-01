@@ -1,0 +1,42 @@
+/* Estilos específicos para la página de registro */
+body {
+    text-align: center;
+    background-color: #f3b7a9; /* Cambia el color de fondo según tus preferencias */
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1c94c8; /* Cambia el color del título según tus preferencias */
+}
+
+table {
+    border: 2px solid #353a46;
+    background-color: #f3b7a9; /* Cambia el color de fondo de la tabla según tus preferencias */
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 20px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #1c94c8;
+    color: white;
+    padding: 8px 10px;
+    margin: 8px 0;
+    border: none;
+    width: 40%;
+}
+
+a {
+    color: #1c94c8; /* Cambia el color del enlace según tus preferencias */
+}
+
+a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el mouse por encima */
+}
