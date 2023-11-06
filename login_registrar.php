@@ -1,4 +1,5 @@
 <?php
+
 include("conexion.php");
 
 // Login
@@ -7,15 +8,16 @@ if(isset($_POST["btningresar"])) {
     $nombre = $_POST["usuario"];
     $pass = $_POST["pass"];
 
-    // Consulta para verificar el inicio de sesión
-    $query = mysqli_query($conn, "SELECT * FROM login WHERE usuario = '$nombre' AND password = '$pass'");
+    // Consulta para obtener la contraseña almacenada
+    $result = mysqli_query($conn, "SELECT password FROM login WHERE usuario = '$nombre'");
 
-    if ($query) {
-        // Comprobar si la consulta se realizó con éxito
-        $nr = mysqli_num_rows($query);
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $stored_password = $row['password'];
 
-        if ($nr == 1) {
-            // El usuario es válido, redirigir a la página principal
+        // Verificar la contraseña ingresada con la almacenada
+        if (password_verify($pass, $stored_password)) {
+            // Contraseña válida, redirigir a la página principal
             echo "<script>alert('Bienvenido $nombre'); window.location='principal.html';</script>";
         } else {
             // Usuario o contraseña incorrectos, redirigir a la página de inicio
@@ -28,14 +30,18 @@ if(isset($_POST["btningresar"])) {
 }
 
 
+
 // Registrar
 if(isset($_POST["btnregistrar"])) {
     // Obtener valores del formulario
     $nombre = $_POST["usuario"];
     $pass = $_POST["pass"];
 
-    // Consulta para registrar al usuario
-    $sqlgrabar = "INSERT INTO login (usuario, password) VALUES ('$nombre', '$pass')";
+    // Encriptar la contraseña
+    $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+
+    // Consulta para registrar al usuario con la contraseña encriptada
+    $sqlgrabar = "INSERT INTO login (usuario, password) VALUES ('$nombre', '$hashed_password')";
     
     if (mysqli_query($conn, $sqlgrabar)) {
         // Registro exitoso, redirigir a la página de inicio
@@ -45,4 +51,5 @@ if(isset($_POST["btnregistrar"])) {
         echo "Error: " . $sqlgrabar . "<br>" . mysqli_error($conn);
     }
 }
+
 ?>

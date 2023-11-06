@@ -1,0 +1,32 @@
+/* estilos.css */
+body {
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table {
+    border: 2px solid #353a46;
+    background-color: red;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 20px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: red;
+    color: white;
+    padding: 8px 10px;
+    margin: 8px 0;
+    border: none;
+    width: 40%;
+}
